@@ -1,0 +1,38 @@
+
+.wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.content{
+  width: 66%;
+}
+
+.taskForm{
+  justify-content: space-between;
+  display: flex;
+}
+
+.taskForm button{
+  align-self: center;
+}
+
+.taskForm mat-form-field{
+  width: 80%;
+}
+
+.task-item{
+  margin: 5px;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tasks_buttons{
+  display: flex;
+  flex-direction: column;
+}
+.text{
+  align-self: center;
+  padding-left: 2%;
+}

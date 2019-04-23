@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <div class="content"><mat-card>
+    <form [formGroup]="form" (submit)="addTask()" class="taskForm">
+      <mat-form-field>
+        <textarea matInput formControlName="task" placeholder="Описание задачи"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary">
+        Добавить
+      </button>
+    </form>
+  </mat-card>
+
+    <ng-container *ngFor="let task of tasks" class="task-list">
+      <mat-card class="task-item">
+
+        <div class="text">
+          <p *ngIf="!task.completed" >{{task.title}}</p>
+          <p *ngIf="task.completed" style="text-decoration: line-through; opacity: 0.5 ">{{task.title}}</p>
+        </div>
+
+        <div class="tasks_buttons" [class.completed]= "task.completed" >
+        <button mat-icon-button (click)="deleteTask(task)" color="warn">
+          <mat-icon>clear</mat-icon>
+        </button>
+        <button mat-icon-button (click)="toggleTask(task)" color="warn">
+          <i class="material-icons" *ngIf="task.completed">
+            check_circle
+          </i>
+          <i class="material-icons" *ngIf="!task.completed">
+            check_circle_outline
+          </i>
+        </button>
+      </div>
+      </mat-card>
+    </ng-container>
+  </div>
+</div>
